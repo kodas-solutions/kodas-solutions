@@ -1,215 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Landing page for Kodas, a professional software development company."
+        />
+        <title>Kodas Solutions</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing page for Kodas, a professional software development company.">
-    <title>Kodas - Software Development Experts</title>
+        <link rel="stylesheet" href="styles.css" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            line-height: 1.6;
-        }
+        <style>
+            body {
+                margin: 0;
+                font-family: "Roboto", sans-serif;
+                color: #333;
+                line-height: 1.6;
+            }
 
-        /* General Styles */
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+            @media (max-width: 768px) {
+                .hide-on-smartphones {
+                    display: none;
+                }
+            }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+            /* General Styles */
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
 
-        header {
-            background: #2e303f;
-            color: white;
-            padding: 20px 0;
-        }
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
 
-        header .logo img {
-            height: 50px;
-        }
+            header {
+                background: #2e303f;
+                color: white;
+                padding: 20px 0;
+            }
 
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-        }
+            header .logo img {
+                height: 40px;
+            }
 
-        header nav ul li a {
-            color: white;
-            font-weight: 500;
-        }
+            header nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+            }
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(120deg, #2e303f, #45485a);
-            color: white;
-        }
+            header nav ul li a {
+                color: white;
+                font-weight: 500;
+            }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+            .hero {
+                text-align: center;
+                padding: 60px 20px;
+                background: linear-gradient(120deg, #2e303f, #45485a);
+                color: white;
+            }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+            .hero-title {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
 
-        .hero button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: #2e303f;
-            background: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 500;
-        }
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
 
-        section {
-            padding: 60px 20px;
-        }
+            .hero-actions {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
 
-        .services {
-            background: #f9f9f9;
-        }
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
 
-        .services h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+            .btn-primary {
+                background-color: #d9d9d9;
+                color: #2f2e41;
+                border: none;
+            }
 
-        .services .service-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+            .btn-primary:hover {
+                background-color: #e6e6e6;
+            }
 
-        .services .service-item {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+            .btn-secondary {
+                background-color: #d9d9d9;
+                color: #2f2e41;
+                border: none;
+            }
 
-        .services .service-item h3 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
+            .btn-secondary:hover {
+                background-color: #e6e6e6;
+            }
 
-        .services .service-item p {
-            font-size: 1rem;
-        }
+            .hero button {
+                color: #2e303f;
+                background: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+            }
 
-        .about {
-            text-align: center;
-        }
+            .hero button:hover {
+                opacity: 0.9;
+            }
 
-        .about h2 {
-            margin-bottom: 20px;
-        }
+            section {
+                padding: 60px 20px;
+            }
 
-        .about p {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+            .services {
+                background: #f9f9f9;
+            }
 
-        footer {
-            background: #2e303f;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+            .services h2 {
+                text-align: center;
+                margin-bottom: 40px;
+            }
 
-        footer a {
-            color: #bbb;
-            font-weight: 500;
-        }
-    </style>
-</head>
+            .services img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                height: 200px;
+            }
 
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="kodas_logo_white.png" alt="Kodas Logo">
+            .services .service-items {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .services .service-item {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .service-item {
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+
+            .service-item:hover {
+                transform: translateY(-7px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .services .service-item img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+
+            .services .service-item h3 {
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+
+            .services .service-item p {
+                font-size: 1rem;
+            }
+
+            .about {
+                background: #fdfdfd;
+                padding: 80px 20px;
+                border-top: 1px solid #eaeaea;
+                text-align: center;
+            }
+
+            .about h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #2e303f;
+            }
+
+            .about img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin: 20px 0;
+                margin-bottom: 40px;
+                height: 250px;
+            }
+
+            .about p {
+                max-width: 800px;
+                margin: 0 auto 20px;
+                font-size: 1.1rem;
+                color: #555;
+            }
+
+            .about ul {
+                list-style: none;
+                padding: 0;
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            .about ul li {
+                font-size: 1rem;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .about ul li strong {
+                color: #2e303f;
+            }
+
+            footer {
+                background: #2e303f;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+
+            footer img.footer-logo {
+                max-width: 100%;
+                margin-bottom: 30px;
+                margin-top: 15px;
+                height: 80px;
+            }
+
+            footer a {
+                color: #bbb;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div
+                class="container"
+                style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                "
+            >
+                <div class="logo" style="flex-shrink: 0; height: 40px">
+                    <img
+                        src="resources/images/full_logo_white.png"
+                        alt="Kodas Logo"
+                        style="height: 40px"
+                    />
+                </div>
+                <nav style="flex-grow: 1; text-align: right">
+                    <ul
+                        style="
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            gap: 20px;
+                        "
+                    >
+                        <li class="hide-on-smartphones">
+                            <a
+                                href="#about"
+                                style="
+                                    color: white;
+                                    font-weight: 500;
+                                    text-decoration: none;
+                                "
+                                >About Us</a
+                            >
+                        </li>
+                        <li>
+                            <a href="es/" title="English">
+                                <img
+                                    src="https://flagicons.lipis.dev/flags/4x3/us.svg"
+                                    alt="English"
+                                    style="height: 20px; display: block"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        </header>
 
-    <div class="hero">
-        <div class="container">
-            <h1>Welcome to Kodas</h1>
-            <p>Your Partner in Innovative Software Solutions</p>
-            <button>Contact Us</button>
-        </div>
-    </div>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service-items">
-                <div class="service-item">
-                    <h3>Custom Software Development</h3>
-                    <p>We build tailored solutions to meet your unique business needs.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Scalable Cloud Infrastructure</h3>
-                    <p>Design and implementation of robust cloud systems for scalability and reliability.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Distributed Systems</h3>
-                    <p>Creating efficient and fault-tolerant distributed systems for modern applications.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Mobile App Development</h3>
-                    <p>Crafting native and cross-platform mobile applications for iOS and Android.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Web Application Development</h3>
-                    <p>Developing cutting-edge web applications that deliver seamless user experiences.</p>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Welcome to Kodas</h1>
+                <p class="hero-subtitle">
+                    Fueling your ideas with scalable and cutting-edge software
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="mailto:info@kodas.es"
+                        class="btn btn-primary"
+                        role="button"
+                        aria-label="Send us an email"
+                    >
+                        Send us an Email
+                    </a>
+                    <a
+                        href="tel:+34649903113"
+                        class="btn btn-secondary"
+                        role="button"
+                        aria-label="Or just make a Call"
+                    >
+                        Or just make a Call
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>At Kodas, we are a team of passionate developers, designers, and strategists dedicated to delivering
-                world-class software solutions. Our mission is to empower businesses through innovative technology,
-                enabling them to achieve their goals with efficiency and scalability.</p>
-        </div>
-    </section>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-items">
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_programmer_re_owql.svg"
+                            alt="Service 1"
+                        />
+                        <h3>Custom Software Development</h3>
+                        <p>
+                            We build tailored solutions to meet your unique
+                            business needs.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_launching_re_tomg.svg"
+                            alt="Service 2"
+                        />
+                        <h3>Scalable Cloud Infrastructure</h3>
+                        <p>
+                            We architect complete systems in the AWS cloud that
+                            are highly scalable and reliable.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_world_re_768g.svg"
+                            alt="Service 3"
+                        />
+                        <h3>Distributed Systems</h3>
+                        <p>
+                            We create efficient and fault-tolerant systems for
+                            modern container-based applications.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_undraw_undraw_smartphone_34c3_-1-_orrt_-1-_tyrp.svg"
+                            alt="Service 4"
+                        />
+                        <h3>Mobile App Development</h3>
+                        <p>
+                            Crafting native and cross-platform mobile
+                            applications for iOS and Android, we deploy them in
+                            the app stores and maintain them.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_startup_life_re_8ow9.svg"
+                            alt="Service 5"
+                        />
+                        <h3>Web Application Development</h3>
+                        <p>
+                            Developing cutting-edge web applications that
+                            deliver seamless user experiences that are
+                            responsive and SEO ready.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="resources/images/undraw_science_re_mnnr.svg"
+                            alt="Service 6"
+                        />
+                        <h3>AI Projects</h3>
+                        <p>
+                            We turn your artificial intelligence ideas into
+                            reality, offering expertise in machine learning
+                            model training, large-scale data collection, and
+                            much more.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Kodas. All Rights Reserved. <a href="/privacy-policy">Privacy Policy</a></p>
-        </div>
-    </footer>
-</body>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="about-intro">
+                    <p>
+                        Kodas is a company based in Asturias. We are a team of
+                        passionate, young engineers, developers, designers, and
+                        strategists dedicated to delivering reliable, efficient,
+                        and cutting-edge software solutions tailored to our
+                        clients' needs.
+                    </p>
+                    <img
+                        src="resources/images/undraw_travelers_re_y25a.svg"
+                        alt="Kodas Team"
+                        style="
+                            max-width: 100%;
+                            border-radius: 8px;
+                            margin: 20px 0;
+                        "
+                    />
+                </div>
 
+                <div class="about-mission">
+                    <p>
+                        Our mission is to empower businesses through innovative
+                        technology, providing them with tools that enable full
+                        control over their daily operations. By optimizing every
+                        aspect of their business, we help them reduce costs,
+                        improve efficiency, and make data-driven decisions.
+                    </p>
+                    <img
+                        src="resources/images/undraw_farming_ni77.svg"
+                        alt="Mission"
+                        style="
+                            max-width: 100%;
+                            border-radius: 8px;
+                            margin: 20px 0;
+                        "
+                    />
+                </div>
+
+                <div class="about-closing">
+                    <p>
+                        Our ultimate goal is to free businesses from operational
+                        complexities so they can fully focus on what truly
+                        matters: growing their business.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <img
+                    class="footer-logo"
+                    src="resources/images/logo_white.png"
+                    alt="Logo"
+                />
+                <p>
+                    &copy; 2023 Kodas | All Rights Reserved |
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    |&nbsp;
+                    <a
+                        href="https://github.com/kodas-solutions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="resources/images/github_logo.png"
+                            alt="GitHub"
+                            style="width: 20px; height: 20px; margin-top: 10px"
+                        />
+                        &nbsp;Github
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </body>
 </html>

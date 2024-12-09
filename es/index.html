@@ -1,1 +1,499 @@
-Bienvenido a Kodas!
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Landing page for Kodas, a professional software development company."
+        />
+        <title>Kodas Solutions</title>
+
+        <link rel="stylesheet" href="../styles.css" />
+
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            body {
+                margin: 0;
+                font-family: "Roboto", sans-serif;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            @media (max-width: 768px) {
+                .hide-on-smartphones {
+                    display: none;
+                }
+            }
+
+            /* General Styles */
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            header {
+                background: #2e303f;
+                color: white;
+                padding: 20px 0;
+            }
+
+            header .logo img {
+                height: 40px;
+            }
+
+            header nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+            }
+
+            header nav ul li a {
+                color: white;
+                font-weight: 500;
+            }
+
+            .hero {
+                text-align: center;
+                padding: 60px 20px;
+                background: linear-gradient(120deg, #2e303f, #45485a);
+                color: white;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-actions {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 1rem;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 500;
+                transition: background-color 0.3s;
+                cursor: pointer;
+            }
+
+            .btn-primary {
+                background-color: #d9d9d9;
+                color: #2f2e41;
+                border: none;
+            }
+
+            .btn-primary:hover {
+                background-color: #e6e6e6;
+            }
+
+            .btn-secondary {
+                background-color: #d9d9d9;
+                color: #2f2e41;
+                border: none;
+            }
+
+            .btn-secondary:hover {
+                background-color: #e6e6e6;
+            }
+
+            .hero button {
+                color: #2e303f;
+                background: white;
+                border: none;
+                border-radius: 5px;
+                font-weight: 500;
+            }
+
+            .hero button:hover {
+                opacity: 0.9;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .services {
+                background: #f9f9f9;
+            }
+
+            .services h2 {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .services img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                height: 200px;
+            }
+
+            .services .service-items {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .services .service-item {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .service-item {
+                transition:
+                    transform 0.3s,
+                    box-shadow 0.3s;
+            }
+
+            .service-item:hover {
+                transform: translateY(-7px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .services .service-item img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+
+            .services .service-item h3 {
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+
+            .services .service-item p {
+                font-size: 1rem;
+            }
+
+            .about {
+                background: #fdfdfd;
+                padding: 80px 20px;
+                border-top: 1px solid #eaeaea;
+                text-align: center;
+            }
+
+            .about h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #2e303f;
+            }
+
+            .about img {
+                max-width: 100%;
+                border-radius: 8px;
+                margin: 20px 0;
+                margin-bottom: 40px;
+                height: 250px;
+            }
+
+            .about p {
+                max-width: 800px;
+                margin: 0 auto 20px;
+                font-size: 1.1rem;
+                color: #555;
+            }
+
+            .about ul {
+                list-style: none;
+                padding: 0;
+                max-width: 800px;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            .about ul li {
+                font-size: 1rem;
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .about ul li strong {
+                color: #2e303f;
+            }
+
+            footer {
+                background: #2e303f;
+                color: white;
+                text-align: center;
+                padding: 20px;
+            }
+
+            footer img.footer-logo {
+                max-width: 100%;
+                margin-bottom: 30px;
+                margin-top: 15px;
+                height: 80px;
+            }
+
+            footer a {
+                color: #bbb;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div
+                class="container"
+                style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                "
+            >
+                <div class="logo" style="flex-shrink: 0; height: 40px">
+                    <img
+                        src="../resources/images/full_logo_white.png"
+                        alt="Kodas Logo"
+                        style="height: 40px"
+                    />
+                </div>
+                <nav style="flex-grow: 1; text-align: right">
+                    <ul
+                        style="
+                            display: flex;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            gap: 20px;
+                        "
+                    >
+                        <li class="hide-on-smartphones">
+                            <a
+                                href="#about"
+                                style="
+                                    color: white;
+                                    font-weight: 500;
+                                    text-decoration: none;
+                                "
+                                >Sobre nosotros</a
+                            >
+                        </li>
+                        <li>
+                            <a href="../" title="Spanish">
+                                <img
+                                    src="https://flagicons.lipis.dev/flags/4x3/es.svg"
+                                    alt="Spanish"
+                                    style="height: 20px; display: block"
+                                />
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Bienvenido a Kodas</h1>
+                <p class="hero-subtitle">
+                    Impulse sus ideas con software escalable a la vanguardia
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="mailto:info@kodas.es"
+                        class="btn btn-primary"
+                        role="button"
+                        aria-label="Send us an email"
+                    >
+                        Mándenos un Email
+                    </a>
+                    <a
+                        href="tel:+34649903113"
+                        class="btn btn-secondary"
+                        role="button"
+                        aria-label="Or just make a Call"
+                    >
+                        O simplemente llámenos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Nuestros servicios</h2>
+                <div class="service-items">
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_programmer_re_owql.svg"
+                            alt="Service 1"
+                        />
+                        <h3>Desarrollo de software a medida</h3>
+                        <p>
+                            Desarrollamos soluciones a medida para necesidades
+                            de su negocio.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_launching_re_tomg.svg"
+                            alt="Service 2"
+                        />
+                        <h3>Infraestructura cloud escalable</h3>
+                        <p>
+                            Diseñamos sistemas completos en la nube de AWS
+                            altamente escalables, fiables y seguros.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_world_re_768g.svg"
+                            alt="Service 3"
+                        />
+                        <h3>Sistemas distribuidos</h3>
+                        <p>
+                            Creamos sistemas eficientes y tolerantes a fallos
+                            para aplicaciones modernas basadas en contenedores.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_undraw_undraw_smartphone_34c3_-1-_orrt_-1-_tyrp.svg"
+                            alt="Service 4"
+                        />
+                        <h3>Desarrollo de Apps móviles</h3>
+                        <p>
+                            Creamos aplicaciones móviles nativas y
+                            multiplataforma para iOS y Android. Las subimos a
+                            las tiendas de Apps y las mantenemos.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_startup_life_re_8ow9.svg"
+                            alt="Service 5"
+                        />
+                        <h3>Desarrollo de aplicaciones web</h3>
+                        <p>
+                            Desarrollamos aplicaciones web de vanguardia que
+                            ofrecen experiencias de usuario sin fisuras,
+                            responsivas y preparadas para SEO.
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <img
+                            src="../resources/images/undraw_science_re_mnnr.svg"
+                            alt="Service 6"
+                        />
+                        <h3>Proyectos de IA</h3>
+                        <p>
+                            Convertimos sus ideas de proyectos de inteligencia
+                            artificial en realidad, ofreciendo experiencia en el
+                            aprendizaje automático para la formación de modelos,
+                            recopilación de datos a gran escala y mucho más.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Sobre nosotros</h2>
+                <div class="about-intro">
+                    <p>
+                        Kodas es una empresa con sede en Asturias. Somos un
+                        equipo de apasionados y jóvenes ingenieros,
+                        desarrolladores, diseñadores y estrategas dedicados a
+                        ofrecer soluciones de software fiables, eficientes y
+                        vanguardistas para las necesidades de nuestros clientes.
+                    </p>
+                    <img
+                        src="../resources/images/undraw_travelers_re_y25a.svg"
+                        alt="Kodas Team"
+                        style="
+                            max-width: 100%;
+                            border-radius: 8px;
+                            margin: 20px 0;
+                        "
+                    />
+                </div>
+
+                <div class="about-mission">
+                    <p>
+                        Nuestra misión es empoderar a las empresas a través de
+                        tecnología innovadora, proporcionándoles herramientas
+                        que les permitan mantener un control total sobre sus
+                        operaciones diarias. Al optimizar cada aspecto de su
+                        negocio, les ayudamos a reducir costos, mejorar la
+                        eficiencia y tomar decisiones basadas en datos.
+                    </p>
+                    <img
+                        src="../resources/images/undraw_farming_ni77.svg"
+                        alt="Mission"
+                        style="
+                            max-width: 100%;
+                            border-radius: 8px;
+                            margin: 20px 0;
+                        "
+                    />
+                </div>
+
+                <div class="about-closing">
+                    <p>
+                        Nuestro objetivo final es liberar a las empresas de las
+                        complejidades operativas para que puedan concentrarse
+                        plenamente en lo que realmente importa: hacer crecer su
+                        negocio.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <img
+                    class="footer-logo"
+                    src="../resources/images/logo_white.png"
+                    alt="Logo"
+                />
+                <p>
+                    &copy; 2023 Kodas | Todos los derechos reservados |
+                    <a href="/privacy-policy">Politica de privacidad</a>
+                    |&nbsp;
+                    <a
+                        href="https://github.com/kodas-solutions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="../resources/images/github_logo.png"
+                            alt="GitHub"
+                            style="width: 20px; height: 20px; margin-top: 10px"
+                        />
+                        &nbsp;Github
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
